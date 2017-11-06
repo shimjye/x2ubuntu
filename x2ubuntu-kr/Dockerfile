@@ -1,7 +1,7 @@
 FROM shimjye/x2ubuntu
 MAINTAINER shimjye "shimjye@gmail.com"
 
-RUN apt-get install -y fcitx fcitx-hangul 
+RUN apt-get install -y fcitx fcitx-hangul locales
 RUN locale-gen ko_KR.UTF-8
 RUN mv /etc/localtime /etc/localtime.old
 RUN ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
