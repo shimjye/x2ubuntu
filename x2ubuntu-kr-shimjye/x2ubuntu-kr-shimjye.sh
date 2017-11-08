@@ -1,4 +1,3 @@
 #!/bin/sh
-CID=$(docker run -d -t -p 2222:22 --name x2 -v /data:/data shimjye/x2ubuntu-kr-shimjye)
-docker logs $CID
+docker run -d -p 2222:22 --name x2 -v /data:/data shimjye/x2ubuntu-kr-shimjye
 
