@@ -7,7 +7,7 @@ RUN mv /etc/localtime /etc/localtime.old
 RUN ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 ADD environment /etc/environment
 RUN mkdir /home/dockerx
-ADD profile /home/dockerx/profile
+ADD profile /home/dockerx/.profile
 RUN chown -R 1000:1000 /home/dockerx
 ADD fcitx-autostart.desktop /etc/xdg/autostart/fcitx-autostart.desktop
 
