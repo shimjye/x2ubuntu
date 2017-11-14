@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER shimjye "shimjye@gmail.com"
+LABEL maintainer="shimjye@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 

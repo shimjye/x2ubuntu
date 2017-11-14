@@ -1,5 +1,5 @@
 FROM shimjye/x2ubuntu
-MAINTAINER shimjye "shimjye@gmail.com"
+LABEL maintainer="shimjye@gmail.com"
 
 RUN apt-get install -y fcitx fcitx-hangul locales
 RUN locale-gen ko_KR.UTF-8

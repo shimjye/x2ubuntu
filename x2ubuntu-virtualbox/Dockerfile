@@ -1,5 +1,5 @@
 FROM shimjye/x2ubuntu-kr-shimjye
-MAINTAINER shimjye "shimjye@gmail.com"
+LABEL maintainer="shimjye@gmail.com"
 
 RUN apt-get install -y virtualbox virtualbox-ext-pack
 
