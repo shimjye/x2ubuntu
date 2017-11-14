@@ -22,8 +22,6 @@ ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
-RUN apt-get clean
-
 EXPOSE 22
 
 CMD ["/run.sh"]

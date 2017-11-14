@@ -15,8 +15,6 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION
     mv apache-tomcat* /opt/tomcat && \
     chown -R 1000:1000 /opt/tomcat
 
-RUN apt-get clean
-
 EXPOSE 22 8080
 
 CMD ["/run.sh"]

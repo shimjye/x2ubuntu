@@ -11,8 +11,6 @@ ADD profile /home/dockerx/.profile
 RUN chown -R 1000:1000 /home/dockerx
 ADD fcitx-autostart.desktop /etc/xdg/autostart/fcitx-autostart.desktop
 
-RUN apt-get clean
-
 EXPOSE 22
 
 CMD ["/run.sh"]
