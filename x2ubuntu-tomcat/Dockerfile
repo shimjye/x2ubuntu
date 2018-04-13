@@ -1,4 +1,4 @@
-FROM shimjye/x2ubuntu-kr-shimjye
+FROM shimjye/x2ubuntu-kr
 LABEL maintainer="shimjye@gmail.com"
 
 RUN apt-get update

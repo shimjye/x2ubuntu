@@ -6,14 +6,10 @@ RUN apt install -y appstream/xenial-backports
 RUN appstreamcli refresh --force
 RUN add-apt-repository ppa:x2go/stable
 RUN apt-get update
-RUN apt-get install -y x2goserver x2goserver-xsession pwgen
+RUN apt-get install -y x2goserver x2goserver-xsession
 
 RUN mkdir -p /home/dockerx/dockerinit/kr
-ADD set_kr.sh /home/dockerx/dockerinit/set_kr.sh
-ADD set_personal.sh /home/dockerx/dockerinit/set_personal.sh
-RUN chmod +x /home/dockerx/dockerinit/*.sh
 RUN chown -R 1000:1000 /home/dockerx
-
 ADD kr/profile /home/dockerx/dockerinit/kr/profile
 ADD kr/environment /home/dockerx/dockerinit/kr/environment
 ADD kr/fcitx-autostart.desktop /home/dockerx/dockerinit/kr/fcitx-autostart.desktop
