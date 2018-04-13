@@ -6,6 +6,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get install -y openssh-server
 RUN apt-get install -y xubuntu-desktop
+# https://askubuntu.com/questions/761592/unable-to-apt-get-dist-upgrade-on-a-persistent-ubuntu-16-04-usb
+RUN chmod -R a+rX,u+w /var/cache/app-info/xapian/default
 
 RUN add-apt-repository ppa:x2go/stable
 RUN apt-get update
