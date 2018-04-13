@@ -1,7 +1,7 @@
 ### x2ubuntu-base
 
-apt-get install -y openssh-server xubuntu-desktop
-set ssh-setting, root-password, dockerx-password
+- apt-get install -y openssh-server xubuntu-desktop
+- set ssh-setting, root-password, dockerx-password
 
 ### run docker container
 ```

@@ -1,0 +1,5 @@
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+LANG="ko_KR.utf8"
+LANGUAGE="ko_KR;ko;en_GB;en"
+LC_ALL="ko_KR.utf8"

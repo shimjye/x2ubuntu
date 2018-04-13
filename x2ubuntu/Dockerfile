@@ -1,28 +1,22 @@
-FROM ubuntu:16.04
+FROM shimjye/x2ubuntu-base
 LABEL maintainer="shimjye@gmail.com"
 
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get update
-RUN apt-get install -y openssh-server
-RUN apt-get install -y xubuntu-desktop
-# https://askubuntu.com/questions/761592/unable-to-apt-get-dist-upgrade-on-a-persistent-ubuntu-16-04-usb
-RUN chmod -R a+rX,u+w /var/cache/app-info/xapian/default
-
+# https://askubuntu.com/questions/854168/how-i-can-fix-appstream-cache-update-completed-but-some-metadata-was-ignored-d
+RUN apt install -y appstream/xenial-backports
+RUN appstreamcli refresh --force
 RUN add-apt-repository ppa:x2go/stable
 RUN apt-get update
 RUN apt-get install -y x2goserver x2goserver-xsession pwgen
 
-RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config
-RUN sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
-RUN sed -i "s/#PasswordAuthentication/PasswordAuthentication/g" /etc/ssh/sshd_config
+RUN mkdir -p /home/dockerx/dockerinit/kr
+ADD set_kr.sh /home/dockerx/dockerinit/set_kr.sh
+ADD set_personal.sh /home/dockerx/dockerinit/set_personal.sh
+RUN chmod +x /home/dockerx/dockerinit/*.sh
+RUN chown -R 1000:1000 /home/dockerx
 
-RUN mkdir -p /tmp/.X11-unix && chmod 1777 /tmp/.X11-unix
-RUN mkdir /var/run/dbus
-
-ADD set_root_pw.sh /set_root_pw.sh
-ADD run.sh /run.sh
-RUN chmod +x /*.sh
+ADD kr/profile /home/dockerx/dockerinit/kr/profile
+ADD kr/environment /home/dockerx/dockerinit/kr/environment
+ADD kr/fcitx-autostart.desktop /home/dockerx/dockerinit/kr/fcitx-autostart.desktop
 
 EXPOSE 22
 
