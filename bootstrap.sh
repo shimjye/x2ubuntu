@@ -2,7 +2,7 @@
 
 # apt-get install
 sudo apt-get update
-sudo apt-get install -y ufw vim git terminator curl wget x2goclient xubuntu-desktop
+sudo apt-get install -y ufw vim git curl wget terminator x2goclient xubuntu-desktop
 
 # docker setting
 curl -fsSL get.docker.com -o get-docker.sh
@@ -19,5 +19,3 @@ sudo ufw enable
 sudo mkdir /data && sudo chown ${USER}:${USER} /data
 sudo mkdir /data/x2ubuntu && sudo chown  ${USER}:${USER} /data/x2ubuntu
 sudo git clone https://github.com/shimjye/x2ubuntu /data/x2ubuntu
-
-sudo apt-get clean
