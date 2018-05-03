@@ -1,9 +1,6 @@
 FROM shimjye/x2ubuntu-base
 LABEL maintainer="shimjye@gmail.com"
 
-# https://askubuntu.com/questions/854168/how-i-can-fix-appstream-cache-update-completed-but-some-metadata-was-ignored-d
-RUN apt install -y appstream/xenial-backports
-RUN appstreamcli refresh --force
 RUN add-apt-repository ppa:x2go/stable
 RUN apt-get update
 RUN apt-get install -y x2goserver x2goserver-xsession
