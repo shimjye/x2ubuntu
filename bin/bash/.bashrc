@@ -95,6 +95,8 @@ alias l='ls -CF'
 alias gita='git add *'
 alias gits='git status'
 alias gitp='git push origin master'
+alias gitf='git fetch'
+alias gitu='git pull'
 alias duh='du -sh *'
 alias dfh='df -h'
 
