@@ -8,8 +8,9 @@ sudo apt-get update
 # install scm-server
 sudo apt-get install -y openjdk-8-jdk scm-server
 
-sudo mkdir /data/scm
-sudo chown -R 999:999 /data/scm
+sudo mkdir /data/pub
+sudo mkdir /data/pub/scm
+sudo chown -R 999:999 /data/pub/scm
 sudo chown -R 999:999 /opt/scm-server
 sudo sed -i 's/SCM_HOME=\/var\/lib\/scm/SCM_HOME=\/data\/scm/g' /etc/default/scm-server
 
