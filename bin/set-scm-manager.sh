@@ -12,6 +12,8 @@ sudo mkdir /data/pub
 sudo mkdir /data/pub/scm
 sudo chown -R 999:999 /data/pub/scm
 sudo chown -R 999:999 /opt/scm-server
-sudo sed -i 's/SCM_HOME=\/var\/lib\/scm/SCM_HOME=\/data\/scm/g' /etc/default/scm-server
+sudo sed -i 's/SCM_HOME=\/var\/lib\/scm/SCM_HOME=\/data\/pub\/scm/g' /etc/default/scm-server
+
+# rc.local docker exec x2scm /opt/scm-server/bin/scm-server
 
 exit 0
